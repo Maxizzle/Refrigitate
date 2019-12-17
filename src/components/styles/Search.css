@@ -1,0 +1,8 @@
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
+.search h3 {
+    border: 2px solid red;
+}

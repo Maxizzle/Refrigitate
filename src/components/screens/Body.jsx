@@ -1,9 +1,12 @@
 import React from 'react'
 
-export default function Nav() {
+
+ const Body =() => {
     return (
         <div>
-            <h1>Hello</h1>
+            <h1>Hello world</h1>
         </div>
     )
 }
+
+export default Body
