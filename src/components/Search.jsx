@@ -2,14 +2,6 @@ import React from "react"
 import axios from "axios"
 import './styles/Search.css'
 
-const difference = (setA, setB) => {
-    var _difference = new Set(setA);
-    for (var elem of setB) {
-        _difference.delete(elem);
-    }
-    return _difference;
-}
-
 class Search extends React.Component {
     constructor(props) {
         super(props)
@@ -34,12 +26,7 @@ class Search extends React.Component {
 
     handleRecipes = (state) => {
         if (state.recipes[0]) {
-            const ingSet = new Set(state.recipes[0].recipe.ingredientLines)
-            console.log(ingSet)
-            const stockSet = new Set([state.stock])
-            console.log(stockSet)
-            const missing = difference(ingSet, stockSet)
-            console.log(missing)
+            const regex = new RegExp(state.stock, "g")
             const results = this.state.recipes.map(function(result, index) {
                 return (<div key={index}>
                     <img src={`${result.recipe.image}`} />
@@ -47,6 +34,7 @@ class Search extends React.Component {
                         <h3>Title: {result.recipe.label}</h3>
                         <h5>Time to cook:</h5><p>{result.recipe.totalTime} minutes</p>
                         <h5>{result.recipe.ingredientLines}</h5>
+                        <h5>You're missing: {result.recipe.ingredientLines.splice(regex, 1)}</h5>
                     </div>
                 </div>)
             })
