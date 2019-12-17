@@ -28,13 +28,18 @@ class Search extends React.Component {
         if (state.recipes[0]) {
             const regex = new RegExp(state.stock, "g")
             const results = this.state.recipes.map(function(result, index) {
+                const ings = result.recipe.ingredientLines.map(function(ing, index) {
+                    if (ing.includes(state.stock)) {} 
+                    else {
+                    return (<p key={index}>{ing}</p>)
+                }})
                 return (<div key={index}>
                     <img src={`${result.recipe.image}`} />
                     <div className="summary">
                         <h3>Title: {result.recipe.label}</h3>
                         <h5>Time to cook:</h5><p>{result.recipe.totalTime} minutes</p>
-                        <h5>{result.recipe.ingredientLines}</h5>
-                        <h5>You're missing: {result.recipe.ingredientLines.splice(regex, 1)}</h5>
+                        {result.recipe.ingredientLines}
+                        <h5>You're missing: {ings}</h5>
                     </div>
                 </div>)
             })
