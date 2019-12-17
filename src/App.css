@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+}
+
+.first-page{
+  color: white;
+  background-color:  #548713;;
+  /* border: 1px solid blue; */
+  display: flex;
+  
+}
+
+.intro-page{
+  background-color: rgba(84, 135, 19, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+}
+
+.intro-page .intro-image img{
+width: 50%;
+
+}
+
+.second-page{
+  background:rgba(84, 135, 19, 0.21);
+  height: 100vh;
+}
+
+.second-page .second-image img{
+  width: 50%;
+}
+
+.third-page{
+  background: rgba(84, 135, 19, 0.42);
+  height: 100vh;
+}
+.third-page .third-image img{
+width: 50%;
+}
+
+.fourth-page {
+  background: rgba(84, 135, 19, 0.6);
+  height: 100vh;
+}
+
+.fourth-page .fourth-image img{
+  width: 50%;
+  }
+
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
