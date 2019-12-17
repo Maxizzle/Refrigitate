@@ -1,9 +1,12 @@
 import React from 'react'
+import {Navlink} from 'react-router-dom'
 
-export default function Header() {
+const Header = () => {
     return (
-        <div>
-            <h2>Hola</h2>
+        <div className="first-page">
+            <h1>Refrigitate</h1>
+          
         </div>
     )
 }
+export default Header

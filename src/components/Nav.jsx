@@ -1,9 +1,14 @@
 import React from 'react'
 
-export default function Nav() {
+ const Nav =() => {
     return (
         <div>
-            <h1>Hello</h1>
+             <div className="navbar">
+            <h1>Hola</h1>
+          
+        </div>
         </div>
     )
 }
+
+export default Nav

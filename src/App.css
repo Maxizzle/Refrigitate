@@ -2,7 +2,19 @@
   text-align: center;
 }
 
-.App-logo {
+.first-page{
+  color: white;
+  background-color:  #548713;;
+  border: 1px solid blue;
+  display: flex;
+  
+}
+
+
+
+
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -26,7 +38,7 @@
 
 .App-link {
   color: #61dafb;
-}
+} */
 
 @keyframes App-logo-spin {
   from {

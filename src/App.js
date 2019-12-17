@@ -1,15 +1,28 @@
 import React from 'react';
 import Body from 'react'
-import Header from './components/Header'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
-import {Route} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
+import Home from './components/Home'
+
+import MobileIntro from './components/MobileIntro'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Header />
+    
+     <Switch>
+   
+        {/* <Route exact path='/' component={Home} />
+        <Route exact path='/MobileTwo' component={MobileTwo} />
+        <Route exact path='/MobileThree' component={MobileThree} /> */}
+
+
+       
+        <Home />
+      </Switch>
+   
     </div>
   );
 }
