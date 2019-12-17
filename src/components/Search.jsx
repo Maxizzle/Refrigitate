@@ -1,6 +1,14 @@
 import React from "react"
 import axios from "axios"
+import './styles/Search.css'
 
+const difference = (setA, setB) => {
+    var _difference = new Set(setA);
+    for (var elem of setB) {
+        _difference.delete(elem);
+    }
+    return _difference;
+}
 
 class Search extends React.Component {
     constructor(props) {
@@ -15,6 +23,7 @@ class Search extends React.Component {
         this.setState({
             stock: event.target.value
         })
+        console.log(this.state.stock)
     }
 
     handleSubmit = (event) => {
@@ -23,13 +32,27 @@ class Search extends React.Component {
         event.target.reset()
     }
 
-    handleRecipes = (recipes) => {
-        if (recipes[0]) {
+    handleRecipes = (state) => {
+        if (state.recipes[0]) {
+            const ingSet = new Set(state.recipes[0].recipe.ingredientLines)
+            console.log(ingSet)
+            const stockSet = new Set([state.stock])
+            console.log(stockSet)
+            const missing = difference(ingSet, stockSet)
+            console.log(missing)
+            const results = this.state.recipes.map(function(result, index) {
+                return (<div key={index}>
+                    <img src={`${result.recipe.image}`} />
+                    <div className="summary">
+                        <h3>Title: {result.recipe.label}</h3>
+                        <h5>Time to cook:</h5><p>{result.recipe.totalTime} minutes</p>
+                        <h5>{result.recipe.ingredientLines}</h5>
+                    </div>
+                </div>)
+            })
             return (
-                <div>
-                    <h5>Title:{recipes[0].recipe.label}</h5>
-                    <h5>Time:{recipes[0].recipe.totalTime}</h5>
-                    <h5>{recipes[0].recipe.ingredientLines}</h5>
+                <div className="results">
+                {results}
                 </div>
             )
         }
@@ -38,13 +61,13 @@ class Search extends React.Component {
     componentDidMount() {
         this.fetchData()
     }
+
     fetchData = async () => {
         try {
             const response = await axios.get(`https://api.edamam.com/search?app_id=e80fead2&app_key=ab2624365b996626a13d10ba827db051&q=${this.state.stock}`)
             this.setState({
                 recipes: response.data.hits
             })
-            console.log(this.state.recipes)
 
         } catch (error) {
             console.log(error)
@@ -56,12 +79,13 @@ class Search extends React.Component {
             <div className="search">
                 <form onSubmit={this.handleSubmit}>
                     <div className="searchBar">
-                        <input type="text" value={this.state.value} onChange={this.handleEvent} placeholder="What's in your fridge?" />
+                        <h2>Add Ingredients</h2>
+                        <input type="text" value={this.state.value} onChange={this.handleEvent} placeholder="Search for ingredients..." />
                         <input type="submit" value="submit" />
                     </div>
                 </form>
-                <h3>Results</h3>
-                <div className={"results"}> {this.handleRecipes(this.state.recipes)}</div>
+                <h2>Results</h2>
+                {this.handleRecipes(this.state)}
             </div>
         )
     }
