@@ -7,7 +7,7 @@ import Header from './Header'
  const MobileFour =() => {
     return (
         <div className='fourth-page'>
-            <Header />
+            {/* <Header /> */}
 
             <h1>4.</h1>
             <h2>Get cooking!</h2>

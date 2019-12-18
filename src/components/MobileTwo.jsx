@@ -8,7 +8,7 @@ export default function MobileTwo() {
     return (
 
         <div className='second-page'>
-            <Header />
+            {/* <Header /> */}
 
             <h1>2.</h1>
 

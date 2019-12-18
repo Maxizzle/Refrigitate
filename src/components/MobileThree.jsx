@@ -7,7 +7,7 @@ const MobileThree =() => {
     return (
 
         <div className='third-page'>
-             <Header />
+             {/* <Header /> */}
             <h1>3.</h1>
 
             <h2>See available recipes based on your ingredients</h2>

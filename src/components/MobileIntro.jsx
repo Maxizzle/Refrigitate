@@ -5,6 +5,7 @@ import cooking from '../images/cooking.png'
  const MobileIntro = () => {
     return (
         <div className='intro-page'>
+            
             <h1>1.</h1>
 
             <h2>Search for an ingredeint</h2>

@@ -5,7 +5,6 @@
 .first-page{
   color: white;
   background-color:  #548713;;
-  /* border: 1px solid blue; */
   display: flex;
   
 }
@@ -20,6 +19,7 @@
 
 .intro-page .intro-image img{
 width: 50%;
+margin-top: 40%;
 
 }
 
@@ -30,6 +30,7 @@ width: 50%;
 
 .second-page .second-image img{
   width: 50%;
+  margin-top: 40%;
 }
 
 .third-page{
@@ -38,15 +39,21 @@ width: 50%;
 }
 .third-page .third-image img{
 width: 50%;
+margin-top: 40%;
 }
 
 .fourth-page {
   background: rgba(84, 135, 19, 0.6);
   height: 100vh;
+  
+ 
+
 }
 
 .fourth-page .fourth-image img{
   width: 50%;
+  margin-top: 40%;
+  
   }
 
 
