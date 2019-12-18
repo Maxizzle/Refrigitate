@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import mix from '../images/mix.png'
-import Header from './Header'
+import Header from './shared/Header'
 
 const MobileThree =() => {
     return (
