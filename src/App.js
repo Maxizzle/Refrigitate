@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Body from './components/screens/Body'
 import Nav from './components/shared/Nav'
@@ -12,27 +13,18 @@ import TagsInput from './components/TagsInput';
 import './App.css';
 import MobileIntro from './components/MobileIntro'
 import { isMetaProperty } from '@babel/types';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Header from './components/shared/Header'
+import Home from "./components/Home";
+
 
 
 function App() {
   return (
     <div className="App">
-    {/* <Tag /> */}
-     <Switch>
-   
-        <Route exact path='/' component={Home} />
-        <Route exact path='/MobileTwo' component={MobileTwo} />
-        <Route exact path='/MobileThree' component={MobileThree} />
-        <Route exact path='/MobileFour' component={MobileFour} />
-        <Route exact path='/TagsInput' component={TagsInput} />
-
-      
-
-
-       <TagsInput />
-        <Home />
-      </Switch>
-   
+      <Header />
+      <Home />
     </div>
   );
 }
