@@ -1,26 +1,20 @@
-import React from 'react'
-import oven from '../images/oven.png'
-import { NavLink } from 'react-router-dom'
-import Header from './shared/Header'
+import React from "react";
+import oven from "../images/SVG/Asset 1.svg";
+import { NavLink } from "react-router-dom";
+import Header from "./shared/Header";
+import "./styles/Instructions.css";
 
+const MobileFour = () => {
+  return (
+    <div className="fourth-page">
+      <h1>4.</h1>
+      <h2>Get cooking!</h2>
 
- const MobileFour =() => {
-    return (
-        <div className='fourth-page'>
-            <Header />
+      <div className="fourth-image">
+        <img src={oven} alt="" />
+      </div>
+    </div>
+  );
+};
 
-            <h1>4.</h1>
-            <h2>Get cooking!</h2>
-
-            <div className='fourth-image'>
-            <img src= {oven} alt = '' />
-            </div>
-
-            <NavLink exact to='/' active className='skip'>
-                Get Started
-                </NavLink>
-        </div>
-    )
-}
-
-export default MobileFour
+export default MobileFour;
