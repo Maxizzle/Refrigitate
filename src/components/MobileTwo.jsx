@@ -6,14 +6,13 @@ import "./styles/Instructions.css";
 export default function MobileTwo() {
   return (
     <div className="second-page">
-      <h1>2.</h1>
-
-      <h2>Add as many as you have to your list</h2>
-
+      <div className="instruction_text">
+        <h1>2.</h1>
+        <p className="instructions">Add as many as you have to your list</p>
+      </div>
       <div className="second-image">
         <img src={touch} alt="" />
       </div>
-
     </div>
   );
 }

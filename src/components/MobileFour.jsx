@@ -6,15 +6,18 @@ import "./styles/Instructions.css";
 
 const MobileFour = () => {
   return (
-    <div className="fourth-page">
-      <h1>4.</h1>
-      <h2>Get cooking!</h2>
-
-      <div className="fourth-image">
-        <img src={oven} alt="" />
+      <div className="fourth-page">
+         <div className="instruction_text">
+        <h1>4.</h1>
+        <p className="instructions">
+        Get cooking!
+        </p>
+        </div>
+        <div className="fourth-image">
+          <img src={oven} alt="" />
+        </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default MobileFour;

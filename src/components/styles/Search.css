@@ -26,7 +26,7 @@
 .add_ingredients {
     width: 233px;
     height: 27px;
-    font-family: 'Odibee Sans', cursive;
+    font-family: Roboto, cursive;
     font-size: 24px;
     font-weight: bold;
     font-stretch: normal;
@@ -72,9 +72,10 @@
 }
 
 .results {
-    font-family: 'Odibee Sans', cursive;
+    font-family: Roboto, cursive;
     font-size: 24px;
     padding: 26px 24px;
+    /* border: 5px blue solid; */
 }
 
 .other_return {
@@ -87,6 +88,7 @@
 .recipe_img {
     /* width: 40%; */
     height: 40vh;
+    padding: 15px;
 }
 
 .summary {
@@ -113,4 +115,68 @@
 
 .missing_ings {
     display: inline;
+}
+
+@media (max-width: 500px) {
+    .search_container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search_form {
+        width: 100%;
+        box-shadow: 0 5.5px 5px 0 rgba(0, 0, 0, 0.24), 0 9px 18px 0 rgba(0, 0, 0, 0.18);
+        background-color: #fafafa;
+        height: 250px;
+    }
+
+    .results_container {
+        width:  100%;
+    }
+
+    .results {
+        font-family: Roboto, cursive;
+        font-size: 24px;
+        padding: 26px 24px;
+        /* border: 5px blue solid; */
+    }
+
+    .other_return {
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .recipe_img {
+        /* width: 40%; */
+        height: 40vh;
+        padding: 15px;
+    }
+
+    .summary {
+        font-family: Roboto, cursive;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        padding-left: 10px;
+    }
+
+    .bold {
+        font-weight: bold;
+        display: inline;
+    }
+
+    .recipe_header {
+        font-size: 20px;
+        color: #548713;
+    }
+
+    .time_cook {
+        display: flex;
+    }
+
+    .missing_ings {
+        display: inline;
+    }
 }
