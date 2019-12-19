@@ -1,0 +1,52 @@
+.how_to {
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+}
+
+.instruction_img {
+    border-radius: 15px;
+}
+
+.intro-page{
+    background-color: rgba(84, 135, 19, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    border-radius: 15px;
+  }
+  
+  .intro-page .intro-image img{
+  width: 50%;
+  border-radius: 15px;
+
+  }
+  
+  .second-page{
+    background:rgba(84, 135, 19, 0.21);
+    height: 100vh;
+    border-radius: 15px;
+  }
+  
+  .second-page .second-image img{
+    width: 50%;
+  }
+  
+  .third-page{
+    background: rgba(84, 135, 19, 0.42);
+    height: 100vh;
+    border-radius: 15px;
+  }
+  .third-page .third-image img{
+  width: 50%;
+  }
+  
+  .fourth-page {
+    background: rgba(84, 135, 19, 0.6);
+    height: 100vh;
+    border-radius: 15px;
+  }
+  
+  .fourth-page .fourth-image img{
+    width: 50%;
+    } 

@@ -1,12 +1,10 @@
 import React from 'react'
-import Header from './shared/Header'
-import MobileIntro from './MobileIntro'
+import Search from './Search'
 
 const Home = () => {
     return (
         <div>
-             <Header />
-             <MobileIntro />
+             <Search />
         </div>
     )
 }

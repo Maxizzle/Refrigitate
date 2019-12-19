@@ -1,24 +1,19 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import cooking from '../images/cooking.png'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import cooking from "../images/SVG/Asset 4.svg";
+import "./styles/Instructions.css";
 
- const MobileIntro = () => {
-    return (
-        <div className='intro-page'>
-            <h1>1.</h1>
+const MobileIntro = () => {
+  return (
+    <div className="intro-page">
+      <h1>1.</h1>
 
-            <h2>Search for an ingredeint</h2>
-            <div className='intro-image'>
-            <img src={cooking} alt ='' />
-            </div>
+      <h2>Search for an ingredient</h2>
+      <div className="intro-image">
+        <img src={cooking} alt="" />
+      </div>
+    </div>
+  );
+};
 
-            <NavLink exact to='/MobileTwo' active className='skip'>
-                Skip
-            </NavLink>
-        </div>
-    )
-}
-
-export default MobileIntro
-
-
+export default MobileIntro;
