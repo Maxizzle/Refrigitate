@@ -7,11 +7,12 @@ import Home from './components/Home'
 import MobileTwo from './components/MobileTwo'
 import MobileThree from './components/MobileThree'
 import MobileFour from './components/MobileFour'
-// import Tag from './components/Tag'
-
-import MobileIntro from './components/MobileIntro'
+// import './TagsInput.scss';
+import TagsInput from './components/TagsInput';
 import './App.css';
+import MobileIntro from './components/MobileIntro'
 import { isMetaProperty } from '@babel/types';
+
 
 function App() {
   return (
@@ -23,10 +24,12 @@ function App() {
         <Route exact path='/MobileTwo' component={MobileTwo} />
         <Route exact path='/MobileThree' component={MobileThree} />
         <Route exact path='/MobileFour' component={MobileFour} />
+        <Route exact path='/TagsInput' component={TagsInput} />
+
       
 
 
-       
+       <TagsInput />
         <Home />
       </Switch>
    
