@@ -1,7 +1,7 @@
 import React from 'react';
-import Body from 'react'
-import Nav from './components/Nav'
-import Footer from './components/Footer'
+import Body from './components/screens/Body'
+import Nav from './components/shared/Nav'
+import Footer from './components/shared/Footer'
 import { Switch, Route } from 'react-router-dom'
 import Home from './components/Home'
 import MobileTwo from './components/MobileTwo'

@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Header'
+import Header from './shared/Header'
 import MobileIntro from './MobileIntro'
 
 const Home = () => {

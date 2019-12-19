@@ -1,7 +1,7 @@
 import React from 'react'
 import touch from '../images/touch-screen.png'
 import { NavLink} from 'react-router-dom'
-import Header from './Header'
+import Header from './shared/Header'
 
 
 export default function MobileTwo() {
