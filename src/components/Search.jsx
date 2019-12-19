@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Instructions from './Instructions'
 import "./styles/Search.css";
+import './styles/TagsInput.scss'
 import TagsInput from './TagsInput'
 
 class Search extends React.Component {
@@ -9,32 +10,31 @@ class Search extends React.Component {
     super(props);
     this.state = {
       recipes: [],
-      stock: ""
+      tags: [],
+      value: ''
     };
     console.log(this.state.recipes)
   }
 
   handleEvent = event => {
     this.setState({
-      stock: event.target.value
+      value: event.target.value
     });
-    console.log(this.state.stock);
   };
 
   handleSubmit = event => {
     event.preventDefault();
+    this.addTags()
     this.fetchData();
-    event.target.reset();
   };
 
   handleRecipes = state => {
     if (state.recipes[0]) {
-      //   const regex = new RegExp(state.stock, "g");
-      const results = this.state.recipes.map(function(result, index) {
-        const ings = result.recipe.ingredientLines.map(function(ing, index) {
-          if (ing.includes(state.stock)) {
+      const results = this.state.recipes.map(function (result, index) {
+        const ings = result.recipe.ingredientLines.map(function (ing, index) {
+          if (ing.includes(state.input)) {
           } else {
-            return <p key={index}>{ing}</p>;
+            return <div key={index}>{ing}</div>;
           }
         });
         return (
@@ -50,11 +50,10 @@ class Search extends React.Component {
                 <p className="bold">Time to cook: </p>
                 <p> {result.recipe.totalTime} minutes</p>
               </div>
-              {/* {result.recipe.ingredientLines} */}
               <div className="missing">
                 <p className="bold">You're missing: </p>
                 <div className="missing_ings">
-                  <p>{ings}</p>
+                  <div>{ings}</div>
                 </div>
               </div>
             </div>
@@ -63,16 +62,14 @@ class Search extends React.Component {
       });
       return <div className="results">{results}</div>;
     }
-  };
-
-  // componentDidMount() {
-  //   this.fetchData();
-  // }
+  }
 
   fetchData = async () => {
+    const query = `${this.state.tags.toString()},${this.state.value}`
+    console.log("query:", query)
     try {
       const response = await axios.get(
-        `https://api.edamam.com/search?app_id=e80fead2&app_key=ab2624365b996626a13d10ba827db051&q=${this.state.stock}`
+        `https://api.edamam.com/search?app_id=e80fead2&app_key=ab2624365b996626a13d10ba827db051&q=${query}`
       );
       this.setState({
         recipes: response.data.hits
@@ -80,34 +77,60 @@ class Search extends React.Component {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  removeTags = indexToRemove => {
+    this.setState({ tags: [...this.state.tags.filter((_, index) => index !== indexToRemove)] })
+  }
+  
+  addTags = async () => {
+    console.log("tags:", this.state.tags, "value:", this.state.value)
+    if (this.state.value !== "") {
+      this.setState({tags: [...this.state.tags, this.state.value]})
+      console.log("tags 2:", this.state.tags, "value:", this.state.value)
+      this.setState({value: ''})
+    }
   };
 
   
 
   // THIS FIRST PART IS WHAT'S RENDERING IF NO RECIPE
   render() {
-    if (this.state.recipes.length ===0) {
+    if (this.state.recipes.length === 0) {
       return (
         <div className="search_container">
           <div className="search_form">
             <form onSubmit={this.handleSubmit}>
               <div className="search_bar">
                 <h2 className="add_ingredients">Add Ingredients</h2>
-                <input
-                  className="search_input"
-                  type="text"
-                  value={this.state.value}
-                  onChange={this.handleEvent}
-                  placeholder="Search for ingredients..."
-              
-                />
+
+                <div className="tags-input">
+                  <ul id="tags">
+                    {this.state.tags.map((tag, index) => (
+                      <li key={index} className="tag">
+                        <span className='tag-title'>{tag}</span>
+                        <span className='tag-close-icon'
+                          onClick={() => this.removeTags(index)}
+                        >
+                          x
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <input
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleEvent}
+                    placeholder="Search"
+                  />
+                </div>
                 <input className="search_button" type="submit" value="SEARCH" />
               </div>
             </form>
           </div>
           <div className="results_container">
             <h2 className="results">Welcome to Refrigitate!</h2>
-            <Instructions/>
+            <Instructions />
           </div>
         </div>
       );
@@ -119,14 +142,27 @@ class Search extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <div className="search_bar">
                 <h2 className="add_ingredients">Add Ingredients</h2>
-                <input
-                  className="search_input"
-                  type="text"
-                  value={this.state.value}
-                  onChange={this.handleEvent}
-                  placeholder="Search for ingredients..."
-       
-                />
+
+                <div className="tags-input">
+                  <ul id="tags">
+                    {this.state.tags.map((tag, index) => (
+                      <li key={index} className="tag">
+                        <span className='tag-title'>{tag}</span>
+                        <span className='tag-close-icon'
+                          onClick={() => this.removeTags(index)}
+                        >
+                          x
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <input
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleEvent}
+                    placeholder="Search for ingredients"
+                  />
+                </div>
                 <input className="search_button" type="submit" value="SEARCH" />
               </div>
             </form>
