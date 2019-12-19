@@ -6,9 +6,10 @@ import "./styles/Instructions.css";
 const MobileIntro = () => {
   return (
     <div className="intro-page">
+      <div className="instruction_text">
       <h1>1.</h1>
-
-      <h2>Search for an ingredient</h2>
+      <p className="instructions">Search for an ingredient</p>
+      </div>
       <div className="intro-image">
         <img src={cooking} alt="" />
       </div>
