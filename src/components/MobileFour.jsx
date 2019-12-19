@@ -1,5 +1,5 @@
 import React from "react";
-import oven from "../images/SVG/Asset 1.svg";
+import oven from "./../images/SVG/Asset 1.svg";
 import { NavLink } from "react-router-dom";
 import Header from "./shared/Header";
 import "./styles/Instructions.css";
