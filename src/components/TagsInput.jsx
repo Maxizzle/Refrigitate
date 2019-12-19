@@ -1,5 +1,5 @@
 import React from "react";
-import './TagsInput.scss'
+// import './TagsInput.scss'
 const TagsInput = props => {
     const [tags, setTags] = React.useState(["Kiwi", "Apple"]);
     const removeTags = indexToRemove => {

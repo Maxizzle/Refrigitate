@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import Instructions from './Instructions'
 import "./styles/Search.css";
+import TagsInput from "./TagsInput";
+
 
 class Search extends React.Component {
   constructor(props) {
@@ -96,6 +98,7 @@ class Search extends React.Component {
                   value={this.state.value}
                   onChange={this.handleEvent}
                   placeholder="Search for ingredients..."
+              
                 />
                 <input className="search_button" type="submit" value="SEARCH" />
               </div>
@@ -121,6 +124,7 @@ class Search extends React.Component {
                   value={this.state.value}
                   onChange={this.handleEvent}
                   placeholder="Search for ingredients..."
+       
                 />
                 <input className="search_button" type="submit" value="SEARCH" />
               </div>
