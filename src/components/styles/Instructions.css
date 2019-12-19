@@ -4,49 +4,156 @@
     border-radius: 15px;
 }
 
-.instruction_img {
-    border-radius: 15px;
+
+.instructions {
+    font-size: 24px;
+    font-family: Roboto;
+    height: 150px;
+    padding: 10px;
 }
 
 .intro-page{
     background-color: rgba(84, 135, 19, 0.1);
-    display: flex;
-    flex-direction: column;
     height: 100vh;
     border-radius: 15px;
+    margin:  0 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
   }
   
   .intro-page .intro-image img{
-  width: 50%;
-  border-radius: 15px;
-
+  width: 100%;
   }
   
   .second-page{
     background:rgba(84, 135, 19, 0.21);
     height: 100vh;
     border-radius: 15px;
+    align-items: center;
+    margin:  0 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
   
   .second-page .second-image img{
-    width: 50%;
+    width: 100%;
   }
   
   .third-page{
-    background: rgba(84, 135, 19, 0.42);
+    background-color: rgba(84, 135, 19, 0.42);
     height: 100vh;
     border-radius: 15px;
+    margin:  0 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   .third-page .third-image img{
-  width: 50%;
+    width: 100%;
   }
   
   .fourth-page {
-    background: rgba(84, 135, 19, 0.6);
+    background-color: rgba(84, 135, 19, 0.6);
     height: 100vh;
     border-radius: 15px;
+    margin:  0 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .fourth-page .fourth-image img{
-    width: 50%;
+    width: 100%;
     } 
+
+    @media (max-width: 500px) {
+      .how_to {
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        width: 100%;
+    }
+
+    .intro-page{
+      background-color: rgba(84, 135, 19, 0.1);
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      margin: 0;
+      width: 100%;
+    }
+    
+.intro-image img{
+      width: 100px;
+      height: 100px;
+      padding-top: 20px;
+    }
+    
+    .second-page{
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+    }
+    
+ .second-image img{
+      width: 100px;
+      height: 100px;
+      padding-top: 20px;
+    }
+    
+    .third-page{
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+    }
+  
+ .third-image img{
+  width: 100px;
+  height: 100px;
+  padding-top: 20px;
+    }
+    
+    .fourth-page {
+      height: 150px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+    }
+    
+    .fourth-image img{
+      width: 140px;
+      /* height: 100px; */
+      padding-top: 20px;
+      } 
+      
+      .instructions {
+        padding: 0px;
+        height: 100px;
+      }
+
+      .instruction_text {
+        width: 250px;
+        padding: 10px;
+      }
+
+    }

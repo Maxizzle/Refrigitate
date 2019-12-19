@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Instructions from './Instructions'
 import "./styles/Search.css";
+import TagsInput from './TagsInput'
 
 class Search extends React.Component {
   constructor(props) {
@@ -46,8 +47,8 @@ class Search extends React.Component {
             <div className="summary">
               <h3 className="recipe_header"> {result.recipe.label}</h3>
               <div className="time_cook">
-                <p className="bold">Time to cook:</p>
-                <p>{result.recipe.totalTime} minutes</p>
+                <p className="bold">Time to cook: </p>
+                <p> {result.recipe.totalTime} minutes</p>
               </div>
               {/* {result.recipe.ingredientLines} */}
               <div className="missing">
@@ -80,6 +81,8 @@ class Search extends React.Component {
       console.log(error);
     }
   };
+
+  
 
   // THIS FIRST PART IS WHAT'S RENDERING IF NO RECIPE
   render() {

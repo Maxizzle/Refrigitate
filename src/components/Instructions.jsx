@@ -7,7 +7,6 @@ import MobileFour from './MobileFour'
 
  const Instructions = () => {
     return (
-        <div>
             <div className='how_to'>
                 {/* <img className='instruction_img' src={require('./../images/SVG/Asset 4.svg' )} alt='cooking'/>
                 <img className='instruction_img' src={require('./../images/SVG/Asset 3.svg' )} alt='cooking'/>
@@ -18,7 +17,6 @@ import MobileFour from './MobileFour'
                 <MobileThree />
                 <MobileFour />
             </div>
-        </div>
     )
 }
 
