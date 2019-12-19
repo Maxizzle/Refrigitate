@@ -99,6 +99,7 @@ class Search extends React.Component {
                   value={this.state.value}
                   onChange={this.handleEvent}
                   placeholder="Search for ingredients..."
+              
                 />
                 <input className="search_button" type="submit" value="SEARCH" />
               </div>
@@ -124,6 +125,7 @@ class Search extends React.Component {
                   value={this.state.value}
                   onChange={this.handleEvent}
                   placeholder="Search for ingredients..."
+       
                 />
                 <input className="search_button" type="submit" value="SEARCH" />
               </div>
