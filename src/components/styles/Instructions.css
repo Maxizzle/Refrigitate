@@ -12,6 +12,16 @@
     padding: 10px;
 }
 
+.instruction_text h1 {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.instruction_text p {
+  margin-top: 0px;
+  text-align: center;
+}
+
 .intro-page{
     background-color: rgba(84, 135, 19, 0.1);
     height: 100vh;
