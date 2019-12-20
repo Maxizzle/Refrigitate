@@ -13,7 +13,7 @@
 
 .search_form {
     width: 33%;
-    height: 100vh;
+    height: 130vh;
     box-shadow: 0 5.5px 5px 0 rgba(0, 0, 0, 0.24), 0 9px 18px 0 rgba(0, 0, 0, 0.18);
     background-color: #fafafa;
 }
@@ -60,7 +60,7 @@
     font-weight: 500;
     letter-spacing: 0.5px;
     color: rgba(0, 0, 0, 0.87);
-  
+    margin-top: 10px;
 }
 
 /* ///RESULTS */
@@ -69,6 +69,7 @@
     width: 66%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .results {
@@ -83,6 +84,8 @@
     border: solid 1px #e0e1e5;
     display: flex;
     width: 100%;
+    padding: 10px;
+    padding-bottom: 10px;
 }
 
 .recipe_img {

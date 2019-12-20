@@ -118,6 +118,7 @@ class Search extends React.Component {
                     ))}
                   </ul>
                   <input
+                    className="bar"
                     type="text"
                     value={this.state.value}
                     onChange={this.handleEvent}
